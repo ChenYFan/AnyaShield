@@ -47,7 +47,7 @@ const getstar = async (repo) => {
         headers:{
             'Accept': 'application/vnd.github.v3+json',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
-            'Authorization': 'token ' + GITHUB_TOKEN
+            'Authorization': 'token ' + GITHUB_TOKEN || ''
         }
     })
     const json = await res.json()
@@ -55,7 +55,7 @@ const getstar = async (repo) => {
 }
 
 const AnyaGnerate = async (config) => {
-    config.text = config.text || (!!config.repo ? 'Star:'+await getstar(config.repo) : null) || '哇酷哇酷！ Anya@CyanFalse'
+    config.text = config.text || (!!config.repo ? '☆Star:'+await getstar(config.repo) : null) || '哇酷哇酷！ Anya@CyanFalse'
     config.textlength = config.text.length
     config.fontsize = config.fontsize || 15
     config.border = config.border || 3
@@ -93,13 +93,13 @@ const AnyaGnerate = async (config) => {
                     top: ${config.border + config.size * 0.1}px; 
                     left: ${config.size / 2}px; 
                     height: ${(config.size - 2 * config.border) * 0.8}px; 
-                    background: linear-gradient(${config.bgcolor1 || '#ffc8cad9'}, ${config.bgcolor2 || '#dd8b99'}); 
+                    background: linear-gradient(#${config.bgcolor1 || 'ffc8cad9'}, #${config.bgcolor2 || 'dd8b99'}); 
                     box-shadow: 0px 0px ${config.border}px rgba(0,0,0,0.5); 
                     border-radius: 5px; 
                     white-space: nowrap; 
                     padding-left: ${config.size / 2}px; 
                     font-size: ${config.fontsize}px; 
-                    color: ${config.color || '#fff'};
+                    color: #${config.color || 'fff'};
                     text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.5); 
                 } @keyframes move { from { width: 0px;} to { width: ${config.barlen - config.border}px; } } .bar { animation-duration: 0.5s; animation-name: move; animation-fill-mode: both; }
             </style>
