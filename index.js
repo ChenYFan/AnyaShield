@@ -43,8 +43,8 @@ const ImagetoBase64 = async (url) => {
 }
 const getstar = async (repo) => {
     const url = `https://api.github.com/repos/${repo}`
-    const res = await fetch(url,{
-        headers:{
+    const res = await fetch(url, {
+        headers: {
             'Accept': 'application/vnd.github.v3+json',
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36',
             'Authorization': 'token ' + GITHUB_TOKEN || ''
@@ -55,7 +55,7 @@ const getstar = async (repo) => {
 }
 
 const AnyaGnerate = async (config) => {
-    config.text = config.text || (!!config.repo ? '☆Star:'+await getstar(config.repo) : null) || '哇酷哇酷！ Anya@CyanFalse'
+    config.text = config.text || (!!config.repo ? '☆Star:' + await getstar(config.repo) : null) || '哇酷哇酷！ Anya@CyanFalse'
     config.textlength = config.text.length
     config.fontsize = config.fontsize || 15
     config.border = config.border || 3
