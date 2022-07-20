@@ -4,11 +4,17 @@
 
 这个仓库的Star ![This Star](https://anya.215213344.xyz/?repo=ChenYFan/AnyaShield)
 
-灵感、模板均来源于[【幼盾】](https://github.com/RimoChan/unv-shield)，程序是直接用js重写了。部署在 [![CloudFlareWorker](https://anya.215213344.xyz/?bgcolor1=ffd800d9&bgcolor2=ffe1006b&color=fff&text=CloudFlareWorker&img=https://workers.cloudflare.com/resources/logo/logo.svg)](https://workers.cloudflare.com/) 上。
+灵感、模板均来源于[![](https://unv-shield.librian.net/api/unv_shield?txt=幼盾)](https://github.com/RimoChan/unv-shield)，程序是直接用js重写了。部署在 [![CloudFlareWorker](https://anya.215213344.xyz/?bgcolor1=ffd800d9&bgcolor2=ffe1006b&color=fff&text=CloudFlareWorker&img=https://workers.cloudflare.com/resources/logo/logo.svg)](https://workers.cloudflare.com/) 上。
+
+这里有一个demo，但我还是建议自建，毕竟我可不敢保证Full SLA
+
+```url
+https://anya.215213344.xyz/
+```
 
 # 参数
 
-与幼盾有所差异，这是参数名，夹带在`SearchParams`中。~~懒得写教程了自己理解去吧。~~
+与【幼盾】有所差异，这是参数名，夹带在`SearchParams`中。~~懒得写教程了自己理解去吧。~~
 
 - repo
 - text
