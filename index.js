@@ -131,7 +131,8 @@ const WakuWaku = async (req) => {
     }), {
         headers: {
             'Content-Type': 'image/svg+xml',
-            "Access-Control-Allow-Origin": "*"
+            "Access-Control-Allow-Origin": "*",
+            "cache-control": "max-age=120, s-maxage=120"
         }
     })
 }
