@@ -128,11 +128,12 @@ const WakuWaku = async (req) => {
         fontsize: urlObj.searchParams.get('fontsize'),
         border: urlObj.searchParams.get('border'),
         size: urlObj.searchParams.get('size')
+
     }), {
         headers: {
             'Content-Type': 'image/svg+xml',
             "Access-Control-Allow-Origin": "*",
-            "cache-control": "max-age=120, s-maxage=120"
+            "cache-control": urlObj.searchParams.get('repo') ? "max-age=120, s-maxage=120" : "public, max-age=31536000"
         }
     })
 }
